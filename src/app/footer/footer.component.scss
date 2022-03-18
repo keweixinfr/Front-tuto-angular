@@ -1,0 +1,23 @@
+:host {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer__container {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15%;
+  font-size: 16px;
+}
+
+.footer__left {
+  flex: 2;
+}
+.footer__right {
+  flex: 8;
+  display: flex;
+  justify-content: space-evenly;
+}
