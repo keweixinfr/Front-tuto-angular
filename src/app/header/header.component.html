@@ -1,17 +1,17 @@
 <div class="header__container">
   <div class="header__left">IMAGE</div>
-  <div class="header__right">
-    <span>
-      <a [routerLink]="['/home']"> HOME </a>
-    </span>
-    <span>
-      <a [routerLink]="['/search']"> SEARCH </a>
-    </span>
-    <span>
-      <a [routerLink]="['/contact-us']"> CONTACT US </a>
-    </span>
-    <span>
-      <a [routerLink]="['/others']"> OTHERS </a>
-    </span>
+  <div class="header__right menu">
+    <div class="menu__item">
+      <a [routerLink]="['/home']" [routerLinkActive]="['is-active']"> HOME </a>
+    </div>
+    <div class="menu__item">
+      <a [routerLink]="['/search']" [routerLinkActive]="['is-active']"> SEARCH </a>
+    </div>
+    <div class="menu__item">
+      <a [routerLink]="['/contact-us']" [routerLinkActive]="['is-active']"> CONTACT US </a>
+    </div>
+    <div class="menu__item">
+      <a [routerLink]="['/others']" [routerLinkActive]="['is-active']"> OTHERS </a>
+    </div>
   </div>
 </div>
