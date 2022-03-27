@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SearchResult } from 'src/models/search-result';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-search-result',
@@ -9,13 +11,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchResultComponent implements OnInit {
 
   keyword: string = '';
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  listResult: SearchResult[] | undefined = [];
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private searchService: SearchService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.activatedRoute.queryParamMap.subscribe(queryParamMap => {
       const keyword = queryParamMap.get('keyword');
       if (keyword) {
         this.keyword = keyword;
+        this.searchService.getSearchResult(this.keyword).subscribe(res => {
+          this.listResult = undefined;
+        });
       }
     })
   }

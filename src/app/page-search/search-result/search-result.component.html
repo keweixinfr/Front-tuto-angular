@@ -4,23 +4,24 @@
     (searchEvent)="onSearch($event)"
   ></app-search-bar>
 </div>
-<div class="result__container">
-  <mat-tab-group dynamicHeight animationDuration="0ms">
-    <mat-tab label="Word cloud"> 
-      <div>
-        Content 1 
-      </div>
-      <div>
-        Content 1 
-      </div>
-      <div>
-        Content 1 
-      </div>
-      <div>
-        Content 1 
-      </div>
-    </mat-tab>
-    <mat-tab label="Basic info"> Content 2 </mat-tab>
-    <mat-tab label="Market trends"> Content 3 </mat-tab>
-  </mat-tab-group>
+<div *ngIf="listResult && listResult.length > 0 else emptyResult">
+  <div class="result__container">
+    <mat-tab-group dynamicHeight animationDuration="0ms">
+      <mat-tab label="Word cloud"> 
+        <div class="list__container">
+          <div *ngFor="let result of listResult" class="list__item">
+            <div>{{result.title}}</div>
+            <div>{{result.body}}</div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Basic info"> Content 2 </mat-tab>
+      <mat-tab label="Market trends"> Content 3 </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
+
+<ng-template #emptyResult>
+  <div class="empty-result__container">Oops...</div>
+</ng-template>
+

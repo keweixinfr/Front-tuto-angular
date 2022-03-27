@@ -4,4 +4,21 @@
 
 .result__container {
   padding: 10px;
+
+  .list__container {
+    padding: 1rem;
+
+    .list__item {
+      font-size: 16px;
+      margin: 5px auto;
+    }
+  }
+}
+
+.empty-result__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 40px);
+  font-size: 200px;
 }
