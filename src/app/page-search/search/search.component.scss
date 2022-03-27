@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-bar__container {
+  flex: 1;
+}
+
+// .search-result__container {
+//   flex: 1;
+//   text-align: center;
+//   color: white;
+//   font-size: 16px
+// }
