@@ -1,0 +1,21 @@
+
+<div class="search-bar__container">
+  <app-search-bar [defaultValue]="keyword" (searchEvent)="onSearch($event)"></app-search-bar>
+</div>
+<div class="result__container">
+  <mat-tab-group mat-align-tabs="left" dynamicHeight animationDuration="0ms">
+    <mat-tab label="Word cloud">
+      <app-word-cloud></app-word-cloud>
+      <!-- <div>
+        word cloud:
+        {{wordcloud}}
+      </div>
+      <div>
+        details
+        {{details}}
+      </div> -->
+    </mat-tab>
+    <mat-tab label="Compony trends">Content 2</mat-tab>
+    <mat-tab label="Market">Content 3</mat-tab>
+  </mat-tab-group>
+</div>
