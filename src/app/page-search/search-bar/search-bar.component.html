@@ -1,5 +1,22 @@
 <div class="search__container">
   <div class="search-icon icon--left">&#xe800;</div>
-  <input type="search" id="search" class="search" name="search" [placeholder]="placeholder" [value]="defaultValue" (keyup.enter)="search($event)">
+  <input
+    type="search"
+    id="search"
+    class="search"
+    name="search"
+    matInput
+    [matAutocomplete]="auto"
+    [placeholder]="placeholder"
+    [value]="defaultValue"
+    [formControl]="searchControl"
+    (keyup.enter)="onEnter($event)"
+  />
   <div class="search-icon icon--right">&#xf130;</div>
 </div>
+
+<mat-autocomplete #auto="matAutocomplete" (optionSelected)='onOptionSelected($event.option.value)'>
+  <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+    {{ option }}
+  </mat-option>
+</mat-autocomplete>
