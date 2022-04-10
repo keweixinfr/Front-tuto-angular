@@ -20,12 +20,6 @@ export class SearchBarComponent implements OnInit {
     if (keyword) {
       console.log('keyword', keyword);
       this.searchEvent.emit(keyword);
-      // fetch(this.URL)
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     const result = data.title;
-      //     this.searchResult = result;
-      //   });
     }
   }
 

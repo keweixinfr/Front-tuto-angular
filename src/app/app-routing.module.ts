@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page-search/page-search.module').then((m) => m.PageSearchModule),
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
   { path: '**', component: HomeComponent },
 ];
 

@@ -29,7 +29,14 @@ export class SearchResultComponent implements OnInit {
   }
 
   onSearch(keyword: String) {
-    this.router.navigate(['.'], { queryParams: { keyword }, relativeTo: this.activatedRoute});
+    if (keyword) {
+      // 跳转到result 界面
+      // this.router.navigate(['.'], {
+      //   queryParams: { keyword },
+      //   relativeTo: this.activatedRoute,
+      // });
+      this.router.navigate(['.'], { queryParams: { keyword }, relativeTo: this.activatedRoute});
+    }
   }
 
 }

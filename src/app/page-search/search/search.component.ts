@@ -7,14 +7,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  // private URL = 'https://jsonplaceholder.typicode.com/todos/1';
-  // searchResult: string = '';
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
   }
 
   onSearch(keyword: String) {
-    this.router.navigate(['result'], { queryParams: { keyword }, relativeTo: this.activatedRoute});
+    console.log(keyword);
+    if (keyword) {
+      // 跳转到result 界面
+      // this.router.navigate(['result'], {
+      //   queryParams: { keyword },
+      //   relativeTo: this.activatedRoute,
+      // });
+      this.router.navigate(['result'], { queryParams: { keyword }, relativeTo: this.activatedRoute});
+    }
   }
 }
