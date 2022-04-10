@@ -22,3 +22,15 @@
   height: calc(100% - 40px);
   font-size: 200px;
 }
+
+.main-result__container {
+  display: flex;
+  .main-result__details {
+    flex: 3;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+  .main-result__wordcloud {
+    flex: 7;
+  }
+}

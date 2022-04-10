@@ -11,7 +11,8 @@ import { SearchService } from '../search.service';
 export class SearchResultComponent implements OnInit {
 
   keyword: string = '';
-  listResult: SearchResult[] | undefined = [];
+  listResult: string[] | undefined = [];
+  companyInfo: string = '';
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private searchService: SearchService) { }
 
   ngOnInit(): void {    
@@ -20,7 +21,8 @@ export class SearchResultComponent implements OnInit {
       if (keyword) {
         this.keyword = keyword;
         this.searchService.getSearchResult(this.keyword).subscribe(res => {
-          this.listResult = undefined;
+          this.listResult = res[0].body.split(' ');
+          this.companyInfo = res[0].body;
         });
       }
     })

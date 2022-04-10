@@ -8,10 +8,12 @@
   <div class="result__container">
     <mat-tab-group dynamicHeight animationDuration="0ms">
       <mat-tab label="Word cloud"> 
-        <div class="list__container">
-          <div *ngFor="let result of listResult" class="list__item">
-            <div>{{result.title}}</div>
-            <div>{{result.body}}</div>
+        <div class="main-result__container">
+          <div class="main-result__wordcloud">
+            <app-word-cloud [listWords]="listResult"></app-word-cloud>
+          </div>
+          <div class="main-result__details">
+            {{companyInfo}}
           </div>
         </div>
       </mat-tab>

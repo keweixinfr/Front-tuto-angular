@@ -7,6 +7,8 @@
   font-size: 20px;
 
   .header__left {
+    font-size: 50px;
+    font-weight: 600;
     flex: 2;
   }
   .header__right {
@@ -21,6 +23,7 @@
     flex: 1;
     text-align: center;
     height: 100%;
+    color: #969ba1;
 
     a {
       line-height: 100px;
