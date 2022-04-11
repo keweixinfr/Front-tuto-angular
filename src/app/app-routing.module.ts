@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -11,6 +10,11 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () =>
       import('./page-search/page-search.module').then((m) => m.PageSearchModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./page-login/page-login.module').then((m) => m.PageLoginModule),
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, 
   { path: '**', component: HomeComponent },
